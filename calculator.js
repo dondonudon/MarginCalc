@@ -101,8 +101,6 @@ function calculate() {
 
   // Render result
   document.getElementById('result').style.display = 'block'
-  document.getElementById('manpowerResult').innerText = formatRupiah(manpower)
-  document.getElementById('foodResult').innerText = formatRupiah(food)
   document.getElementById('jobCostResult').innerText = formatRupiah(jobCost)
   document.getElementById('bufferResult').innerText = formatRupiah(operationalBuffer)
   document.getElementById('adjustedCostResult').innerText = formatRupiah(adjustedCost)
