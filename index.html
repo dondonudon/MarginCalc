@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Margin Calculator</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <div class="card">
+    <div class="card-header">
+      <h1 data-i18n="title">Margin Calculator</h1>
+      <button type="button" id="langToggle" class="lang-toggle" aria-label="Switch language to Indonesian">ID</button>
+    </div>
+
+    <div class="grid">
+
+      <div class="field">
+        <label data-i18n="labelVehicle">Vehicle / Transport Cost</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="vehicle"
+          value=""
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelCrewCount">Crew Count</label>
+        <input
+          type="number"
+          id="crewCount"
+          value=""
+          placeholder="0"
+          min="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelCostPerCrew">Cost per Crew</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="costPerCrew"
+          value="175.000"
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelFoodPerCrew">Food per Crew</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="foodPerCrew"
+          value="35.000"
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelPacking">Material / Equipment</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="packing"
+          value=""
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelToll">Toll / Parking</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="toll"
+          value=""
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelOther">Other Expenses</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="other"
+          value=""
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field">
+        <label data-i18n="labelCustomerType">Customer Type</label>
+
+        <select id="customerType">
+          <option value="0.15" data-i18n="optPriceSensitive">Price-sensitive (+15%)</option>
+
+          <option value="0.10" selected data-i18n="optStandard">Standard (+10%)</option>
+
+          <option value="0.05" data-i18n="optCorporate">Corporate / VIP (+5%)</option>
+
+          <option value="0.03" data-i18n="optRepeat">Repeat Customer (+3%)</option>
+        </select>
+      </div>
+
+    </div>
+
+    <button type="button" id="calculateBtn" data-i18n="btnCalculate">Calculate Price</button>
+
+    <div class="result" id="result" style="display:none;">
+
+      <div class="result-row">
+        <span data-i18n="resManpower">Man Power Cost</span>
+        <span id="manpowerResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resFood">Food Cost</span>
+        <span id="foodResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resJobCost">Total Job Cost</span>
+        <span id="jobCostResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resBuffer">Operational Buffer (10%)</span>
+        <span id="bufferResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resAdjusted">Adjusted Cost</span>
+        <span id="adjustedCostResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resMargin">Margin Profit</span>
+        <span id="marginProfitResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resMinProfit">Minimum Profit Floor</span>
+        <span id="minProfitResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resFinalProfit">Final Profit Used</span>
+        <span id="finalProfitResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resTarget">Internal Target Price</span>
+        <span id="targetPriceResult"></span>
+      </div>
+
+      <div class="result-row">
+        <span data-i18n="resNegotiation">Negotiation Buffer</span>
+        <span id="negotiationResult"></span>
+      </div>
+
+      <div class="result-row final">
+        <span data-i18n="resOffer">Initial Offer Price</span>
+        <span id="offerPriceResult"></span>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+  <script src="i18n.js"></script>
+
+</body>
+
+</html>
