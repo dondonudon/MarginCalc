@@ -74,25 +74,114 @@ button:hover {
 .result-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
   gap: 12px;
 }
 
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-row span:first-child {
+  font-size: 13px;
+  color: #777;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  flex: 1;
+}
+
+.result-row span:last-child {
+  font-weight: 700;
+  font-size: 15px;
+  color: #111;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .final {
-  font-size: 28px;
+  font-size: 16px;
   font-weight: bold;
-  margin-top: 24px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border: none;
+  background: #111;
+  border-radius: 8px;
+  color: white;
+}
+
+.final span:first-child {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.65) !important;
+  font-weight: 500 !important;
+}
+
+.final span:last-child {
+  font-size: 22px !important;
+  color: white !important;
 }
 
 @media (max-width: 768px) {
+  body {
+    margin: 16px auto;
+    padding: 12px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .card-header {
+    margin-bottom: 16px;
+  }
+
+  .card-header h1 {
+    font-size: 20px;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  input,
+  select {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  button {
+    margin-top: 16px;
+    padding: 12px;
+  }
+
+  .result {
+    margin-top: 20px;
+    padding: 14px;
   }
 
   .result-row {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 10px 0;
+  }
+
+  .result-row span:last-child {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .final {
+    margin-top: 16px;
+    padding: 12px 14px;
+  }
+
+  .final span:last-child {
+    font-size: 20px !important;
   }
 }
 
