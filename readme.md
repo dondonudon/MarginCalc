@@ -70,11 +70,11 @@ to create more realistic and sustainable pricing.
 
 | Adjusted Cost | Minimum Profit |
 |---|---|
-| < 1M | 500K |
-| 1M–3M | 1M |
-| 3M–7M | 1.5M |
-| 7M–15M | 2.5M |
-| > 15M | 4M |
+| < 1M | 475K |
+| 1M–3M | 950K |
+| 3M–7M | 1.425M |
+| 7M–15M | 2.375M |
+| > 15M | 3.8M |
 
 ---
 

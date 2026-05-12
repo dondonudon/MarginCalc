@@ -55,11 +55,11 @@ function getMargin(adjustedCost) {
 }
 
 function getMinimumProfit(adjustedCost) {
-  if (adjustedCost < 1_000_000) return 500_000
-  if (adjustedCost < 3_000_000) return 1_000_000
-  if (adjustedCost < 7_000_000) return 1_500_000
-  if (adjustedCost < 15_000_000) return 2_500_000
-  return 4_000_000
+  if (adjustedCost < 1_000_000) return 475_000
+  if (adjustedCost < 3_000_000) return 950_000
+  if (adjustedCost < 7_000_000) return 1_425_000
+  if (adjustedCost < 15_000_000) return 2_375_000
+  return 3_800_000
 }
 
 function calculate() {
