@@ -114,5 +114,18 @@ function calculate() {
   document.getElementById('offerPriceResult').innerText = formatRupiah(initialOfferPrice)
 }
 
+function reset() {
+  document.getElementById('vehicle').value = ''
+  document.getElementById('crewCount').value = ''
+  document.getElementById('costPerCrew').value = '175.000'
+  document.getElementById('foodPerCrew').value = '35.000'
+  document.getElementById('packing').value = ''
+  document.getElementById('toll').value = ''
+  document.getElementById('other').value = ''
+  document.getElementById('customerType').value = '0.10'
+  document.getElementById('result').style.display = 'none'
+}
+
 attachThousandsSeparator()
 document.getElementById('calculateBtn').addEventListener('click', calculate)
+document.getElementById('resetBtn').addEventListener('click', reset)
