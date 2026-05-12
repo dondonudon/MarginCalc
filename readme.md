@@ -58,8 +58,8 @@ to create more realistic and sustainable pricing.
 
 | Adjusted Cost | Margin |
 |---|---|
-| < 1M | 70% |
-| 1M–3M | 50% |
+| < 1M | 55% |
+| 1M–3M | 45% |
 | 3M–7M | 35% |
 | 7M–15M | 25% |
 | > 15M | 20% |
@@ -70,10 +70,10 @@ to create more realistic and sustainable pricing.
 
 | Adjusted Cost | Minimum Profit |
 |---|---|
-| < 1M | 475K |
-| 1M–3M | 950K |
-| 3M–7M | 1.425M |
-| 7M–15M | 2.375M |
+| < 1M | 450K |
+| 1M–3M | 900K |
+| 3M–7M | 1.400M |
+| 7M–15M | 2.300M |
 | > 15M | 3.8M |
 
 ---

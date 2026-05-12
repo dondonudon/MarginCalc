@@ -47,18 +47,18 @@ function attachThousandsSeparator() {
 }
 
 function getMargin(adjustedCost) {
-  if (adjustedCost < 1_000_000) return 0.70
-  if (adjustedCost < 3_000_000) return 0.50
+  if (adjustedCost < 1_000_000) return 0.55
+  if (adjustedCost < 3_000_000) return 0.45
   if (adjustedCost < 7_000_000) return 0.35
   if (adjustedCost < 15_000_000) return 0.25
   return 0.20
 }
 
 function getMinimumProfit(adjustedCost) {
-  if (adjustedCost < 1_000_000) return 475_000
-  if (adjustedCost < 3_000_000) return 950_000
-  if (adjustedCost < 7_000_000) return 1_425_000
-  if (adjustedCost < 15_000_000) return 2_375_000
+  if (adjustedCost < 1_000_000) return 450_000
+  if (adjustedCost < 3_000_000) return 900_000
+  if (adjustedCost < 7_000_000) return 1_400_000
+  if (adjustedCost < 15_000_000) return 2_300_000
   return 3_800_000
 }
 
@@ -93,11 +93,11 @@ function calculate() {
   // Final profit
   const finalProfit = Math.max(marginProfit, minimumProfit)
 
-  // Internal target (rounded to nearest 100K)
-  const internalTargetPrice = Math.round((adjustedCost + finalProfit) / 100_000) * 100_000
+  // Internal target (rounded to nearest 50K)
+  const internalTargetPrice = Math.round((adjustedCost + finalProfit) / 50_000) * 50_000
 
-  // Final offer (rounded to nearest 100K)
-  const initialOfferPrice = Math.round((internalTargetPrice * (1 + negotiationBuffer)) / 100_000) * 100_000
+  // Final offer (rounded to nearest 50K)
+  const initialOfferPrice = Math.round((internalTargetPrice * (1 + negotiationBuffer)) / 50_000) * 50_000
 
   // Render result
   document.getElementById('result').style.display = 'block'
