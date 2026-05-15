@@ -4,7 +4,8 @@ Simple service pricing calculator with:
 - operational buffer
 - tiered profit margin
 - minimum profit floor
-- negotiation buffer
+- fixed 3% negotiation buffer (repeat customer)
+- out-of-town surcharge logic
 
 Built as a lightweight static HTML tool that can be hosted anywhere.
 
@@ -15,7 +16,8 @@ Built as a lightweight static HTML tool that can be hosted anywhere.
 - Automatic price calculation
 - Tiered margin system
 - Minimum profit protection
-- Negotiation buffer support
+- Fixed 3% negotiation buffer (repeat customer default)
+- Out-of-town surcharge: +1 crew for unloading, multiplied food cost
 - Crew-based cost calculation
 - Thousand separator formatting
 - EN/ID language toggle
@@ -30,27 +32,32 @@ Built as a lightweight static HTML tool that can be hosted anywhere.
 Job Cost
 + Operational Buffer (10%)
 + Profit Margin
-+ Negotiation Buffer
++ Fixed Negotiation Buffer (3%)
 = Initial Offer Price
 ```
 
 The calculator uses:
 - dynamic margin tiers
 - minimum profit floors
-- customer negotiation profiles
+- fixed 3% negotiation buffer (repeat customer)
 
 to create more realistic and sustainable pricing.
 
 ---
 
-## Customer Types
+## Out-of-Town Calculation
 
-| Type | Buffer |
-|---|---|
-| Price-sensitive | +15% |
-| Standard | +10% |
-| Corporate / VIP | +5% |
-| Repeat Customer | +3% |
+When the **Out of Town** checkbox is enabled:
+
+- **+1 crew member** is added to the manpower cost (one person travels with the truck to unload at the destination)
+- **Food cost is multiplied** by the number of meals per person (default: 3 — covers multiple meals for the travel day)
+
+| Scenario | Manpower | Food |
+|---|---|---|
+| In town | `crewCount × costPerCrew` | `crewCount × foodPerCrew × 1` |
+| Out of town | `(crewCount + 1) × costPerCrew` | `(crewCount + 1) × foodPerCrew × mealsCount` |
+
+> Example: 3 crew → 4 paid (3 base + 1 unloader); food calculated for 4 people × 3 meals.
 
 ---
 

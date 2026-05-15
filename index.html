@@ -35,6 +35,7 @@
         <label data-i18n="labelCrewCount">Crew Count</label>
         <input
           type="number"
+          inputmode="numeric"
           id="crewCount"
           value=""
           placeholder="0"
@@ -97,18 +98,26 @@
         />
       </div>
 
-      <div class="field">
-        <label data-i18n="labelCustomerType">Customer Type</label>
-
-        <select id="customerType">
-          <option value="0.15" data-i18n="optPriceSensitive">Price-sensitive (+15%)</option>
-
-          <option value="0.10" selected data-i18n="optStandard">Standard (+10%)</option>
-
-          <option value="0.05" data-i18n="optCorporate">Corporate / VIP (+5%)</option>
-
-          <option value="0.03" data-i18n="optRepeat">Repeat Customer (+3%)</option>
-        </select>
+      <div class="field" id="outOfTownField">
+        <label class="oot-header">
+          <span class="oot-main-label" data-i18n="labelOutOfTown">Out of Town</span>
+          <span class="oot-pill" data-i18n="labelOutOfTown">Out of Town</span>
+          <span class="oot-meals-label" data-i18n="labelMealsCount">Meals per Person</span>
+        </label>
+        <label class="checkbox-label" for="outOfTown">
+          <input type="checkbox" id="outOfTown" />
+          <span data-i18n="outOfTownYes">Destination outside city</span>
+        </label>
+        <input
+          class="oot-meals-input"
+          type="number"
+          inputmode="numeric"
+          id="mealsCount"
+          value="3"
+          min="1"
+          max="10"
+          placeholder="3"
+        />
       </div>
 
     </div>
@@ -153,11 +162,6 @@
       <div class="result-row">
         <span data-i18n="resTarget">Internal Target Price</span>
         <span id="targetPriceResult"></span>
-      </div>
-
-      <div class="result-row">
-        <span data-i18n="resNegotiation">Negotiation Buffer</span>
-        <span id="negotiationResult"></span>
       </div>
 
       <div class="result-row final">

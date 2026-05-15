@@ -70,11 +70,14 @@ function calculate() {
   const packing = parseInputValue(document.getElementById('packing').value)
   const toll = parseInputValue(document.getElementById('toll').value)
   const other = parseInputValue(document.getElementById('other').value)
-  const negotiationBuffer = Number(document.getElementById('customerType').value)
+  const negotiationBuffer = 0.03
+  const isOutOfTown = document.getElementById('outOfTown').checked
+  const mealsCount = isOutOfTown ? (Number(document.getElementById('mealsCount').value) || 3) : 1
 
-  // Crew calculations
-  const manpower = crewCount * costPerCrew
-  const food = crewCount * foodPerCrew
+  // Crew calculations — out-of-town adds +1 crew for destination unloading
+  const effectiveCrew = isOutOfTown ? crewCount + 1 : crewCount
+  const manpower = effectiveCrew * costPerCrew
+  const food = effectiveCrew * foodPerCrew * mealsCount
 
   // Total job cost
   const jobCost = vehicle + manpower + food + packing + toll + other
@@ -108,7 +111,6 @@ function calculate() {
   document.getElementById('minProfitResult').innerText = formatRupiah(minimumProfit)
   document.getElementById('finalProfitResult').innerText = formatRupiah(finalProfit)
   document.getElementById('targetPriceResult').innerText = formatRupiah(internalTargetPrice)
-  document.getElementById('negotiationResult').innerText = `${(negotiationBuffer * 100).toFixed(0)}%`
   document.getElementById('offerPriceResult').innerText = formatRupiah(initialOfferPrice)
 }
 
@@ -120,10 +122,18 @@ function reset() {
   document.getElementById('packing').value = ''
   document.getElementById('toll').value = ''
   document.getElementById('other').value = ''
-  document.getElementById('customerType').value = '0.10'
+  document.getElementById('outOfTown').checked = false
+  document.getElementById('mealsCount').value = '3'
+  document.getElementById('outOfTownField').classList.remove('is-checked')
   document.getElementById('result').style.display = 'none'
 }
 
 attachThousandsSeparator()
 document.getElementById('calculateBtn').addEventListener('click', calculate)
 document.getElementById('resetBtn').addEventListener('click', reset)
+document.getElementById('outOfTown').addEventListener('change', (e) => {
+  document.getElementById('outOfTownField').classList.toggle('is-checked', e.target.checked)
+})
+document.querySelector('.oot-pill').addEventListener('click', () => {
+  document.getElementById('outOfTown').click()
+})

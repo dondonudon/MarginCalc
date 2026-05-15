@@ -12,11 +12,9 @@ const translations = {
     labelPacking: 'Material / Equipment',
     labelToll: 'Toll / Parking',
     labelOther: 'Other Expenses',
-    labelCustomerType: 'Customer Type',
-    optPriceSensitive: 'Price-sensitive (+15%)',
-    optStandard: 'Standard (+10%)',
-    optCorporate: 'Corporate / VIP (+5%)',
-    optRepeat: 'Repeat Customer (+3%)',
+    labelOutOfTown: 'Out of Town',
+    outOfTownYes: 'Destination outside city',
+    labelMealsCount: 'Meals per Person',
     btnCalculate: 'Calculate Price',
     btnReset: 'Reset',
     resJobCost: 'Total Job Cost',
@@ -26,7 +24,6 @@ const translations = {
     resMinProfit: 'Minimum Profit Floor',
     resFinalProfit: 'Final Profit Used',
     resTarget: 'Internal Target Price',
-    resNegotiation: 'Negotiation Buffer',
     resOffer: 'Initial Offer Price'
   },
   id: {
@@ -38,11 +35,9 @@ const translations = {
     labelPacking: 'Material / Peralatan',
     labelToll: 'Tol / Parkir',
     labelOther: 'Pengeluaran Lainnya',
-    labelCustomerType: 'Tipe Pelanggan',
-    optPriceSensitive: 'Sensitif Harga (+15%)',
-    optStandard: 'Standar (+10%)',
-    optCorporate: 'Korporat / VIP (+5%)',
-    optRepeat: 'Pelanggan Setia (+3%)',
+    labelOutOfTown: 'Luar Kota',
+    outOfTownYes: 'Tujuan di luar kota',
+    labelMealsCount: 'Jumlah Makan per Orang',
     btnCalculate: 'Hitung Harga',
     btnReset: 'Reset',
     resJobCost: 'Total Biaya Pekerjaan',
@@ -52,7 +47,6 @@ const translations = {
     resMinProfit: 'Batas Minimum Keuntungan',
     resFinalProfit: 'Keuntungan Akhir',
     resTarget: 'Harga Target Internal',
-    resNegotiation: 'Buffer Negosiasi',
     resOffer: 'Harga Penawaran Awal'
   }
 }

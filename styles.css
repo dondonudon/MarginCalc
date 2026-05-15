@@ -31,6 +31,7 @@ h1 {
 .field {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 label {
@@ -46,6 +47,86 @@ select {
   font-size: 16px;
   width: 100%;
 }
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  user-select: none;
+  margin-bottom: 0;
+  color: #333;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  accent-color: black;
+  flex-shrink: 0;
+}
+
+#mealsField {
+  grid-column: 2;
+}
+
+/* === OUT OF TOWN MORPHING FIELD === */
+/* .oot-header is a <label> — inherits font-weight:bold and margin-bottom:6px automatically */
+
+.oot-pill {
+  display: none;
+  font-size: 11px;
+  font-weight: 600;
+  background: #111;
+  color: white;
+  border-radius: 20px;
+  padding: 3px 10px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  line-height: 1.2;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.oot-pill::after {
+  content: ' ×';
+  font-size: 13px;
+  opacity: 0.7;
+  margin-left: 1px;
+}
+
+.oot-pill:hover {
+  opacity: 0.7;
+}
+
+.oot-meals-label {
+  display: none;
+  font-weight: bold;
+}
+
+.oot-meals-input {
+  display: none;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Checked state */
+#outOfTownField.is-checked .oot-main-label { display: none; }
+#outOfTownField.is-checked .oot-pill { display: inline; }
+#outOfTownField.is-checked .oot-meals-label { display: inline; }
+#outOfTownField.is-checked .checkbox-label { display: none; }
+#outOfTownField.is-checked .oot-meals-input { display: block; }
 
 .button-group {
   display: flex;
