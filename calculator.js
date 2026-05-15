@@ -96,11 +96,11 @@ function calculate() {
   // Final profit
   const finalProfit = Math.max(marginProfit, minimumProfit)
 
-  // Internal target (rounded to nearest 50K)
-  const internalTargetPrice = Math.round((adjustedCost + finalProfit) / 50_000) * 50_000
+  // Internal target (rounded up to nearest 50K)
+  const internalTargetPrice = Math.ceil((adjustedCost + finalProfit) / 50_000) * 50_000
 
-  // Final offer (rounded to nearest 50K)
-  const initialOfferPrice = Math.round((internalTargetPrice * (1 + negotiationBuffer)) / 50_000) * 50_000
+  // Final offer (rounded up to nearest 50K)
+  const initialOfferPrice = Math.ceil((internalTargetPrice * (1 + negotiationBuffer)) / 50_000) * 50_000
 
   // Render result
   document.getElementById('result').style.display = 'block'
