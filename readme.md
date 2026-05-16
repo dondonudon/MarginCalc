@@ -65,11 +65,11 @@ When the **Out of Town** checkbox is enabled:
 
 | Adjusted Cost | Margin |
 |---|---|
-| < 1M | 55% |
-| 1M–3M | 45% |
-| 3M–7M | 35% |
-| 7M–15M | 25% |
-| > 15M | 20% |
+| < 1M | 45% |
+| 1M–3M | 35% |
+| 3M–7M | 25% |
+| 7M–15M | 20% |
+| > 15M | 15% |
 
 ---
 
@@ -77,11 +77,11 @@ When the **Out of Town** checkbox is enabled:
 
 | Adjusted Cost | Minimum Profit |
 |---|---|
-| < 1M | 450K |
-| 1M–3M | 900K |
-| 3M–7M | 1.400M |
-| 7M–15M | 2.300M |
-| > 15M | 3.8M |
+| < 1M | 300K |
+| 1M–3M | 500K |
+| 3M–7M | 750K |
+| 7M–15M | 1.300M |
+| > 15M | 2.100M |
 
 ---
 
