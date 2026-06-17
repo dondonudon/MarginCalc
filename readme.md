@@ -66,14 +66,14 @@ The origin crew splits into **stay crew** (load at origin, paid 1 day at `costPe
 |---|---|
 | Stay crew manpower | `(crewCount − travelCrewCount) × costPerCrew` |
 | Travel crew manpower | `travelCrewCount × travelCostPerCrew × days` |
-| Spot hire manpower | `spotHireCount × spotHireCost × days` |
+| Spot hire manpower | `spotHireCount × spotHireCost` |
 | Stay crew food | `(crewCount − travelCrewCount) × foodPerCrew` |
 | Travel crew food | `travelCrewCount × foodPerCrew × mealsPerDay × days` |
 
 Spot hire crew receive no food allowance.
 
-> Example: 4 origin crew, 2 travel (at 250K/day), 1 spot hire (at 100K/day), 2 days —
-> stay cost = 2×175K, travel cost = 2×250K×2, spot hire = 1×100K×2.
+> Example: 4 origin crew, 2 travel (at 250K/day), 1 spot hire (at 100K), 2 days —
+> stay cost = 2×175K, travel cost = 2×250K×2, spot hire = 1×100K.
 
 ---
 

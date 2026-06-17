@@ -85,7 +85,7 @@ function calculate() {
   const manpower = isOutOfTown
     ? stayCrewCount * costPerCrew
       + travelCrewCount * travelCostPerCrew * days
-      + spotHireCount * spotHireCost * days
+      + spotHireCount * spotHireCost
     : crewCount * costPerCrew
   const food = isOutOfTown
     ? stayCrewCount * foodPerCrew + travelCrewCount * foodPerCrew * mealsPerDay * days
