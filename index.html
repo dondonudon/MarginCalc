@@ -102,14 +102,51 @@
         <label class="oot-header">
           <span class="oot-main-label" data-i18n="labelOutOfTown">Out of Town</span>
           <span class="oot-pill" data-i18n="labelOutOfTown">Out of Town</span>
-          <span class="oot-meals-label" data-i18n="labelMealsCount">Meals per Person</span>
         </label>
         <label class="checkbox-label" for="outOfTown">
           <input type="checkbox" id="outOfTown" />
           <span data-i18n="outOfTownYes">Destination outside city</span>
         </label>
+      </div>
+
+      <div class="field oot-extra">
+        <label data-i18n="labelTravelCrewCount">Crew Going to Destination</label>
         <input
-          class="oot-meals-input"
+          type="number"
+          inputmode="numeric"
+          id="travelCrewCount"
+          value=""
+          min="0"
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field oot-extra">
+        <label data-i18n="labelTravelCostPerCrew">Cost per Traveling Crew</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="travelCostPerCrew"
+          value="250.000"
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field oot-extra">
+        <label data-i18n="labelDays">Days</label>
+        <input
+          type="number"
+          inputmode="numeric"
+          id="days"
+          value="1"
+          min="1"
+          placeholder="1"
+        />
+      </div>
+
+      <div class="field oot-extra">
+        <label data-i18n="labelMealsCount">Meals per Day</label>
+        <input
           type="number"
           inputmode="numeric"
           id="mealsCount"
@@ -117,6 +154,29 @@
           min="1"
           max="10"
           placeholder="3"
+        />
+      </div>
+
+      <div class="field oot-extra">
+        <label data-i18n="labelSpotHireCount">Spot Hire Count</label>
+        <input
+          type="number"
+          inputmode="numeric"
+          id="spotHireCount"
+          value="0"
+          min="0"
+          placeholder="0"
+        />
+      </div>
+
+      <div class="field oot-extra">
+        <label data-i18n="labelSpotHireCost">Cost per Spot Hire</label>
+        <input
+          type="text"
+          inputmode="numeric"
+          id="spotHireCost"
+          value="100.000"
+          placeholder="0"
         />
       </div>
 

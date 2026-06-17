@@ -6,7 +6,9 @@ const currencyInputs = [
   'foodPerCrew',
   'packing',
   'toll',
-  'other'
+  'other',
+  'travelCostPerCrew',
+  'spotHireCost'
 ]
 
 function formatNumber(value) {
@@ -72,12 +74,22 @@ function calculate() {
   const other = parseInputValue(document.getElementById('other').value)
   const negotiationBuffer = 0.03
   const isOutOfTown = document.getElementById('outOfTown').checked
-  const mealsCount = isOutOfTown ? (Number(document.getElementById('mealsCount').value) || 3) : 1
+  const days = isOutOfTown ? (Number(document.getElementById('days').value) || 1) : 1
+  const mealsPerDay = isOutOfTown ? (Number(document.getElementById('mealsCount').value) || 3) : 1
+  const travelCrewCount = isOutOfTown ? (Number(document.getElementById('travelCrewCount').value) || 0) : 0
+  const travelCostPerCrew = isOutOfTown ? parseInputValue(document.getElementById('travelCostPerCrew').value) : 0
+  const spotHireCount = isOutOfTown ? (Number(document.getElementById('spotHireCount').value) || 0) : 0
+  const spotHireCost = isOutOfTown ? parseInputValue(document.getElementById('spotHireCost').value) : 0
 
-  // Crew calculations — out-of-town adds +1 crew for destination unloading
-  const effectiveCrew = isOutOfTown ? crewCount + 1 : crewCount
-  const manpower = effectiveCrew * costPerCrew
-  const food = effectiveCrew * foodPerCrew * mealsCount
+  const stayCrewCount = crewCount - travelCrewCount
+  const manpower = isOutOfTown
+    ? stayCrewCount * costPerCrew
+      + travelCrewCount * travelCostPerCrew * days
+      + spotHireCount * spotHireCost * days
+    : crewCount * costPerCrew
+  const food = isOutOfTown
+    ? stayCrewCount * foodPerCrew + travelCrewCount * foodPerCrew * mealsPerDay * days
+    : crewCount * foodPerCrew
 
   // Total job cost
   const jobCost = vehicle + manpower + food + packing + toll + other
@@ -123,8 +135,14 @@ function reset() {
   document.getElementById('toll').value = ''
   document.getElementById('other').value = ''
   document.getElementById('outOfTown').checked = false
+  document.getElementById('travelCrewCount').value = ''
+  document.getElementById('travelCostPerCrew').value = '250.000'
+  document.getElementById('days').value = '1'
   document.getElementById('mealsCount').value = '3'
+  document.getElementById('spotHireCount').value = '0'
+  document.getElementById('spotHireCost').value = '100.000'
   document.getElementById('outOfTownField').classList.remove('is-checked')
+  document.querySelector('.grid').classList.remove('oot-active')
   document.getElementById('result').style.display = 'none'
 }
 
@@ -133,6 +151,7 @@ document.getElementById('calculateBtn').addEventListener('click', calculate)
 document.getElementById('resetBtn').addEventListener('click', reset)
 document.getElementById('outOfTown').addEventListener('change', (e) => {
   document.getElementById('outOfTownField').classList.toggle('is-checked', e.target.checked)
+  document.querySelector('.grid').classList.toggle('oot-active', e.target.checked)
 })
 document.querySelector('.oot-pill').addEventListener('click', () => {
   document.getElementById('outOfTown').click()
