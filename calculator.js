@@ -136,7 +136,7 @@ function reset() {
   document.getElementById('other').value = ''
   document.getElementById('outOfTown').checked = false
   document.getElementById('travelCrewCount').value = ''
-  document.getElementById('travelCostPerCrew').value = '250.000'
+  document.getElementById('travelCostPerCrew').value = '500.000'
   document.getElementById('days').value = '1'
   document.getElementById('mealsCount').value = '3'
   document.getElementById('spotHireCount').value = '0'
