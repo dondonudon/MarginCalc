@@ -136,10 +136,10 @@ function reset() {
   document.getElementById('other').value = ''
   document.getElementById('outOfTown').checked = false
   document.getElementById('travelCrewCount').value = ''
-  document.getElementById('travelCostPerCrew').value = '500.000'
+  document.getElementById('travelCostPerCrew').value = '1.200.000'
   document.getElementById('days').value = '1'
   document.getElementById('mealsCount').value = '3'
-  document.getElementById('spotHireCount').value = '0'
+  document.getElementById('spotHireCount').value = ''
   document.getElementById('spotHireCost').value = '100.000'
   document.getElementById('outOfTownField').classList.remove('is-checked')
   document.querySelector('.grid').classList.remove('oot-active')

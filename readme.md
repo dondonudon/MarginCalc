@@ -52,7 +52,7 @@ When the **Out of Town** checkbox is enabled, six additional fields appear:
 | Field | Description | Default |
 |---|---|---|
 | **Crew Going to Destination** | How many of the origin crew travel with the truck | 0 |
-| **Cost per Traveling Crew** | Day rate for traveling crew (typically higher than stay crew) | 250,000 |
+| **Cost per Traveling Crew** | Day rate for traveling crew (typically higher than stay crew) | 1,200,000 |
 | **Days** | Number of days the job spans | 1 |
 | **Meals per Day** | Meals per traveling crew member per day | 3 |
 | **Spot Hire Count** | Local helpers hired at the destination | 0 |
@@ -72,8 +72,8 @@ The origin crew splits into **stay crew** (load at origin, paid 1 day at `costPe
 
 Spot hire crew receive no food allowance.
 
-> Example: 4 origin crew, 2 travel (at 250K/day), 1 spot hire (at 100K), 2 days —
-> stay cost = 2×175K, travel cost = 2×250K×2, spot hire = 1×100K.
+> Example: 4 origin crew, 2 travel (at 1,200K/day), 1 spot hire (at 100K), 2 days —
+> stay cost = 2×175K, travel cost = 2×1,200K×2, spot hire = 1×100K.
 
 ---
 
