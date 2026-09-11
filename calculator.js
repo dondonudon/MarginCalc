@@ -51,17 +51,17 @@ function attachThousandsSeparator() {
 function getMargin(adjustedCost) {
   if (adjustedCost < 1_000_000) return 0.45
   if (adjustedCost < 3_000_000) return 0.35
-  if (adjustedCost < 7_000_000) return 0.25
-  if (adjustedCost < 15_000_000) return 0.20
-  return 0.15
+  if (adjustedCost < 7_000_000) return 0.30
+  if (adjustedCost < 15_000_000) return 0.25
+  return 0.25
 }
 
 function getMinimumProfit(adjustedCost) {
-  if (adjustedCost < 1_000_000) return 300_000
-  if (adjustedCost < 3_000_000) return 500_000
-  if (adjustedCost < 7_000_000) return 750_000
-  if (adjustedCost < 15_000_000) return 1_300_000
-  return 2_100_000
+  if (adjustedCost < 1_000_000) return 500_000
+  if (adjustedCost < 3_000_000) return 750_000
+  if (adjustedCost < 7_000_000) return 1_000_000
+  if (adjustedCost < 15_000_000) return 1_500_000
+  return 2_500_000
 }
 
 function calculate() {
